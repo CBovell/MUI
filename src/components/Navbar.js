@@ -1,22 +1,29 @@
 import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import {Link} from 'react-router-dom';
 
 export default function Navbar() {
-  const [value, setValue] = React.useState(2);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
 
   return (
 
     <center><div className='nav'>
-    <Tabs value={value} onChange={handleChange} aria-label="disabled tabs example">
-      <Tab label="Active" />
-      <Tab label="Disabled" />
-      <Tab label="Active" />
-    </Tabs>
+
+    <Link to='/home'>
+    <Tab label="Home" />
+    </Link> 
+
+    <Link to = '/gallery'>
+    <Tab label="Gallery" />
+    </Link>
+    
+
+    <Link to = '/goods'>
+    <Tab label="Baked Goods" />
+    </Link>
+
+    
+
     </div></center>
     
     
