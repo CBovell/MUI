@@ -6,6 +6,7 @@ import Gallery from './components/Gallery';
 import Navbar from './components/Navbar';
 import { Route,Routes, Navigate } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
+import Footer from './components/Footer';
 
 
 const obj = {
@@ -24,6 +25,8 @@ function App() {
         <Route path='/gallery' element = {<Gallery />}></Route>
         <Route path='/order' element = {<Goods />}></Route>
       </Routes>
+
+      
       </div>
       
 

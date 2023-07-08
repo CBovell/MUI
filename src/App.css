@@ -1,9 +1,41 @@
-
+@import url(https://fonts.googleapis.com/css2?family=Tajawal);
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
   }
+
+
+  .footer{
+    margin-top: 1.5in;
+    justify-content: center;
+    background-color: #1f2630;
+    min-height: 125px;
+    min-width: 100%;
+    color: rgba(255, 255, 255, 0.973);
+    margin-top: -5px;
+    padding-top: 15px;
+    padding-bottom: 5vh;
+    position: static; 
+    bottom:0;
   
+  }
+
+  svg {
+    width: 50px;
+    height: 50px;
+    fill: azure;
+  }
+  svg:hover {
+    fill: rgb(170, 64, 149);
+  }
+
+  body{
+    margin: 0;
+    overflow: hidden;
+    animation: fadeInAnimation ease 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
   ::-webkit-scrollbar-track {
   background: #f5f5f5;
   border-radius: 10px;
@@ -19,26 +51,28 @@
   }
 
 .yob{
+  max-width: 100vw;
+  
   background-color: rgb(233, 235, 235);
-  height: 100vh;
   margin-top: none;
   justify-content: center;
-  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .nav{
-  background-color: rgb(14, 13, 13);
+ background-color: #000000;
   width: 100vw;
   justify-content: center;
   display: flex;
   padding-bottom: 1.5vh;
   padding-top: 1.5vh;
+  margin-bottom: 0vh;
 
 
 }
 
 button {
-  font-size: 14px;
+  font-size: 1.1vh;
   color: #e1e1e1;
   font-family: inherit;
   font-weight: 720;
@@ -77,6 +111,82 @@ button:after {
   transition-property: width, left;
 }
 
+body {
+  margin: 0;
+}
+
+.wrapper {
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  perspective: 10px;
+}
+
+header {
+  margin-bottom: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+.background {
+  transform: translateZ(-5px) scale(2);
+}
 
 
+.background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
 
+.title {
+  font-size: 7rem;
+  color: rgb(255, 215, 253);
+  text-shadow: 0 0 30px black;
+  text-decoration: darkblue;
+  
+}
+
+section {
+  font-size: 2rem;
+  padding: 2rem;
+  background-image: url('https://wallpapercave.com/wp/wp7367665.jpg') ;
+  background-size: cover;
+  color: white;
+  min-height: 95.9vh;
+  margin-bottom: 0vh;
+  padding-left: 20vw;
+  padding-right: 20vw;
+}
+
+.about{
+  font-family: Tajawal;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 30px black;
+  text-decoration: darkblue;
+}
+
+.abtext{
+  margin-top: -2vh;
+  font-family: Tajawal;
+  font-weight: 400;
+  text-shadow: 0 0 30px black;
+}
+
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
