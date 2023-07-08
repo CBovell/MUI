@@ -3,6 +3,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import {Link} from 'react-router-dom';
 
+
 export default function Navbar() {
 
   return (
@@ -10,16 +11,16 @@ export default function Navbar() {
     <center><div className='nav'>
 
     <Link to='/home'>
-    <Tab label="Home" />
+    <button className='button'>HOME</button>
     </Link> 
 
     <Link to = '/gallery'>
-    <Tab label="Gallery" />
+    <button className='button'>GALLERY</button>
     </Link>
     
 
-    <Link to = '/goods'>
-    <Tab label="Baked Goods" />
+    <Link to = '/order'>
+    <button className='button'>ORDER</button>
     </Link>
 
     
