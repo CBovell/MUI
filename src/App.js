@@ -10,7 +10,12 @@ const obj = {
 
 function App() {
   return (
-    <Navbar info={obj}/>
+    <center>
+    <div className='yob'>
+      <center><Navbar info={obj}/></center>
+      
+    </div>
+    </center>
   );
 }
 
