@@ -199,16 +199,18 @@ section {
   border-style:groove;
 }
 
+.gal{
+  padding: 6vh;
+  animation: fadeInAnimation ease 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
 
 .gallery{
-  
   background-color: #ffffff;
-  padding: 2vh;
-  height: 90vh;
+  height: 96vh;
   overflow-y: auto;
-  overflow-x: hidden;
-  padding-bottom: 2vh;
-  
+  overflow-x: hidden; 
 }
 
 @keyframes fadeInAnimation {

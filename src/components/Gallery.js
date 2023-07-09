@@ -1,14 +1,18 @@
 import * as React from 'react';
 import ResponsiveGallery from "react-responsive-gallery";
+import Footer from './Footer';
 
 
 export default function Gallery() {
   return (
     <div className='gallery'>
-    <ResponsiveGallery
-    useLightBox
-    images={itemData}
-    />
+    <div className='gal'>
+        <ResponsiveGallery
+        useLightBox
+        images={itemData}
+        />
+    </div>
+    <Footer/>
     </div>
   );
 }
