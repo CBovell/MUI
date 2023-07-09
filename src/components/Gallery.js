@@ -1,29 +1,77 @@
 import * as React from 'react';
-import { experimentalStyled as styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
+import ResponsiveGallery from "react-responsive-gallery";
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
 
 export default function Gallery() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 1, sm: 8, md: 18 }}>
-        {Array.from(Array(7)).map((_, index) => (
-          <Grid item xs={1} sm={4} md={6} key={index}>
-            
-                <div className='cardwrap'><img src='https://www.hdwallpapers.in/download/dessert_cake_raspberries_sweet_fruit_blueberry_black_currant_4k_hd-HD.jpg' className='cards'/></div>
-                
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+    <div className='gallery'>
+    <ResponsiveGallery
+    useLightBox
+    images={itemData}
+    />
+    </div>
   );
 }
+
+const itemData = [
+  {
+    src: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
+    title: 'Breakfast',
+    imgClassName:'card'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
+    title: 'Burger',
+    imgClassName:'card'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
+    title: 'Camera',
+    imgClassName:'card'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
+    title: 'Coffee',
+    imgClassName:'card'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
+    title: 'Hats',
+    imgClassName:'card'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
+    title: 'Honey',
+    imgClassName:'card'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
+    title: 'Basketball',
+    imgClassName:'card'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
+    title: 'Fern',
+    imgClassName:'card'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
+    title: 'Mushrooms',
+    imgClassName:'card'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
+    title: 'Tomato basil',
+    imgClassName:'card'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
+    title: 'Sea star',
+    imgClassName:'card'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
+    title: 'Bike',
+    imgClassName:'card'
+  },
+];

@@ -193,17 +193,23 @@ section {
   background-color: #ffffff;
   border-radius: 50px;
 }
-.MuiImageListItem-img{
-  border-radius: 25px;
-
+.card{
+  border-radius: 50px;
+  object-fit: cover;
+  border-style:groove;
 }
 
-.cards{
-  overflow: hidden;
-  max-width: 33vw;
-  max-height: 50vh
-}
 
+.gallery{
+  
+  background-color: #ffffff;
+  padding: 2vh;
+  height: 90vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 2vh;
+  
+}
 
 @keyframes fadeInAnimation {
   0% {
