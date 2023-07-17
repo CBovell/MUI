@@ -7,6 +7,25 @@ export default function Gallery() {
   return (
     <div className='gallery'>
     <div className='gal'>
+      <h1 className='galtxt'>Joe</h1>
+        <ResponsiveGallery
+        useLightBox
+        images={itemData}
+        />
+        <br/>
+        <h1>Joe</h1>
+        <ResponsiveGallery
+        useLightBox
+        images={itemData}
+        />
+        <br/>
+        <h1>Joe</h1>
+        <ResponsiveGallery
+        useLightBox
+        images={itemData}
+        />
+        <br/>
+        <h1>Joe</h1>
         <ResponsiveGallery
         useLightBox
         images={itemData}
