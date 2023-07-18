@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import { Route,Routes, Navigate } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
 import Footer from './components/Footer';
+import {storage} from './firebase'
 
 
 const obj = {

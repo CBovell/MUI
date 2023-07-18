@@ -3,25 +3,44 @@ import ResponsiveGallery from "react-responsive-gallery";
 import Footer from './Footer';
 import { useState } from 'react';
 import {storage} from '../firebase'
-import {ref} from '../firebase/storage'
-const [imgdata, setImgData] = useState([[],[],[],[]])
+import {ref, listAll, getDownloadURL} from 'firebase/storage'
 
 
-const imagesRef = ref(storage, '')
 
-useEffect(async ()=>{
-  try {
+
+const imagesRef = ref(storage, process.env.REACT_APP_CAT1)
+
+
+
+
+function Gallery() {
+  const [cat1, setCat1] = useState([])
+  useState(async ()=>{
+    try {
+      const images = await listAll(imagesRef)
     
-  } catch (error) {
-    console.log(error)
-  }
+      images.items.forEach( async (imageRef)=>{
+        try {
+          const imgURL = await getDownloadURL(imageRef)
+          setCat1((cat1) => [...cat1, imgURL])
 
+        } catch (error) {
+          console.log(error)
+        }
+        
+      })
+      
+      
 
-},[])
-
-export default function Gallery() {
+    } catch (error) {
+      console.log(error)
+      
+    }
+  })
   return (
+    
     <div className='gallery'>
+      {console.log(cat1)}
     <div className='gal'>
       <h1 className='galtxt'>Joe</h1>
         <ResponsiveGallery
@@ -114,3 +133,5 @@ const itemData = [
     imgClassName:'card'
   },
 ];
+
+export default Gallery

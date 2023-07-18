@@ -1,19 +1,22 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import 'dotenv/config'
+
 import { getStorage } from "firebase/storage";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
-  authDomain: process.env.AUTHDOM,
-  projectId: process.env.PROJECTID,
-  storageBucket: process.env.STORAGE,
-  messagingSenderId: process.env.MESSAGE,
-  appId: process.env.APPID
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTHDOM,
+  projectId: process.env.REACT_APP_PROJECTID,
+  storageBucket: process.env.REACT_APP_STORAGE,
+  messagingSenderId: process.env.REACT_APP_MESSAGE,
+  appId: process.env.REACT_APP_APPID
 };
+
+console.log(process.env.REACT_APP_APPID)
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
