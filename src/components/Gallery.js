@@ -1,7 +1,23 @@
 import * as React from 'react';
 import ResponsiveGallery from "react-responsive-gallery";
 import Footer from './Footer';
+import { useState } from 'react';
+import {storage} from '../firebase'
+import {ref} from '../firebase/storage'
+const [imgdata, setImgData] = useState([[],[],[],[]])
 
+
+const imagesRef = ref(storage, '')
+
+useEffect(async ()=>{
+  try {
+    
+  } catch (error) {
+    console.log(error)
+  }
+
+
+},[])
 
 export default function Gallery() {
   return (

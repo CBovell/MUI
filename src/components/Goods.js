@@ -24,6 +24,7 @@ function Goods(){
     }
 
 
+
     return(
         <div className="goodswrapper">
             <div className="goods">
@@ -100,17 +101,17 @@ function Goods(){
             
             >Submit</Button>
             </div>
-        </div>
-        <Footer/>
-        </div>
+            </div>
+            <Footer/>
+            </div>
+            
+            
+            
+            
+        )
+            
         
-        
-        
-        
-    )
-        
-    
 
-}
+    }
 
-export default Goods
+    export default Goods
