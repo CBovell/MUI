@@ -27,83 +27,33 @@ function Goods(){
 
     return(
         <div className="goodswrapper">
-            <div className="goods">
-            <div className="inputForm">
-            <div className="formtitles">
-            <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Type</InputLabel>
-            <Select
-            labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={type}
-                onChange={e =>{
-                    setType(e.target.value)
-                }}
-                >
-                <MenuItem value={'A'}>A</MenuItem>
-                <MenuItem value={'B'}>B</MenuItem>
-                <MenuItem value={'C'}>C</MenuItem>
-                <MenuItem value={'D'}>D</MenuItem>
-                </Select>
-        </FormControl>
-        <br/>
-        <br/>
+            <div>
+                <form>
+                    <input type='number' name='number' min ='0' placeholder='Number of Servings' required />
+                    <br/>
+                    <input type = 'text' name='contact' placeholder="Contact Information" required/>
+                    <br/>
+                    <select name='type' required>
+                        <option>{process.env.REACT_APP_CAT1}</option>
+                        <option>{process.env.REACT_APP_CAT2}</option>
+                        <option>{process.env.REACT_APP_CAT3}</option>
+                        <option>{process.env.REACT_APP_CAT4}</option>
+                    </select>
+                    <br/>
 
-            <h3>Joe</h3>
+                <textarea placeholder="Tell Us About Any Requirements You May Have" name='Description'required/>
+                <br/>
+                <textarea placeholder="Please Link to Any Designs You Like " name='Description'required/>
+
+
+                </form>
+
+
             </div>
-            <Slider
-            value={num}
-            name="number"
-            getAriaValueText={valuetext}
-            valueLabelDisplay="auto"
-            step={6}
-            marks
-            min={6}
-            max={100}
-            onChange={event => {
-                setNum(event.target.value);
-                console.log(num)
-                }}
-            />
-            <div className="formtitles">
-            <h3>Joe</h3>
-            </div>
-            <TextField
-            fullWidth
-            id="outlined-controlled"
-            name="desc"
-            value={name}
-            onChange={event => {
-            setName(event.target.value);
-            console.log(description)
-            }}
-            />
-            <br/>
-            <br/>
-            <div className="formtitles">
-            <h3>Joe</h3>
-            </div>
-            <TextField
-                fullWidth
-                id="outlined-controlled"
-                name="links"
-                value={name}
-                onChange={event => {
-                setName(event.target.value);
-                console.log(name)
-                }}
-            />
-            <br/>
-            <br/>
-            <Button 
-            variant="text"
-            onClick={handleSubmit}
-            
-            >Submit</Button>
-            </div>
-            </div>
+
+
             <Footer/>
-            </div>
+        </div>
             
             
             

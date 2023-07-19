@@ -1,137 +1,99 @@
 import * as React from 'react';
 import ResponsiveGallery from "react-responsive-gallery";
 import Footer from './Footer';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {storage} from '../firebase'
 import {ref, listAll, getDownloadURL} from 'firebase/storage'
 
 
 
 
-const imagesRef = ref(storage, process.env.REACT_APP_CAT1)
-
-
 
 
 function Gallery() {
   const [cat1, setCat1] = useState([])
-  useState(async ()=>{
+  const [cat2, setCat2] = useState([])
+  const [cat3, setCat3] = useState([])
+  const [cat4, setCat4] = useState([])
+  const [loading, setLoading] = useState(false)
+
+  const fetchData = async (ref, cat) => {  
     try {
-      const images = await listAll(imagesRef)
-    
+      const images = await listAll(ref)
+
       images.items.forEach( async (imageRef)=>{
         try {
           const imgURL = await getDownloadURL(imageRef)
-          setCat1((cat1) => [...cat1, imgURL])
+          if(cat == 1){
+            setCat1((cat1) => [...cat1, {src:imgURL, imgClassName:'card'}])
+          }
+          if(cat == 2){
+            setCat2((cat2) => [...cat2, {src:imgURL, imgClassName:'card'}])
+          }
+          if(cat == 3){
+            setCat3((cat3) => [...cat3, {src:imgURL, imgClassName:'card'}])
+          }
+          if(cat == 4){
+            setCat4((cat4) => [...cat4, {src:imgURL, imgClassName:'card'}])
+          }
 
         } catch (error) {
           console.log(error)
         }
-        
       })
-      
-      
-
     } catch (error) {
       console.log(error)
-      
     }
-  })
-  return (
+  }
+  
+
+  useEffect(()=>{
+    fetchData(ref(storage, 'CAT1'),1)
+    fetchData(ref(storage, 'CAT2'),2)
+    fetchData(ref(storage, 'CAT3'),3)
+    fetchData(ref(storage, 'CAT4'),4)
+    setTimeout(setLoading(true), 200000)
+  },[])
+
+
+   if(loading){
+    return (
     
     <div className='gallery'>
       {console.log(cat1)}
+      {console.log(cat2)}
+      {console.log(cat3)}
+      {console.log(cat4)}
     <div className='gal'>
-      <h1 className='galtxt'>Joe</h1>
+      <h1 className='galtxt'>{process.env.REACT_APP_CAT1}</h1>
         <ResponsiveGallery
         useLightBox
-        images={itemData}
+        images={cat1}
         />
         <br/>
-        <h1>Joe</h1>
+        <h1>{process.env.REACT_APP_CAT2}</h1>
         <ResponsiveGallery
         useLightBox
-        images={itemData}
+        images={cat2}
         />
         <br/>
-        <h1>Joe</h1>
+        <h1>{process.env.REACT_APP_CAT3}</h1>
         <ResponsiveGallery
         useLightBox
-        images={itemData}
+        images={cat3}
         />
         <br/>
-        <h1>Joe</h1>
+        <h1>{process.env.REACT_APP_CAT4}</h1>
         <ResponsiveGallery
         useLightBox
-        images={itemData}
+        images={cat4}
         />
+        <br/>
+        <br/>
+        <br/>
     </div>
     <Footer/>
     </div>
-  );
+  );}
 }
-
-const itemData = [
-  {
-    src: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    title: 'Breakfast',
-    imgClassName:'card'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d',
-    title: 'Burger',
-    imgClassName:'card'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'Camera',
-    imgClassName:'card'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'Coffee',
-    imgClassName:'card'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Hats',
-    imgClassName:'card'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Honey',
-    imgClassName:'card'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball',
-    imgClassName:'card'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-    title: 'Fern',
-    imgClassName:'card'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms',
-    imgClassName:'card'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil',
-    imgClassName:'card'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star',
-    imgClassName:'card'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike',
-    imgClassName:'card'
-  },
-];
-
 export default Gallery
