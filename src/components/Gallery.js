@@ -56,6 +56,7 @@ function Gallery() {
   },[])
 
 
+
    if(loading){
     return (
     

@@ -225,6 +225,8 @@ section {
   height: 55vh;
   background-color: #ffffff;
   padding: 5vh;
+  overflow:auto;
+
 }
 
 .formtitles{
@@ -246,3 +248,26 @@ section {
       opacity: 1;
    }
 }
+
+textarea{
+  width: 80%;
+  margin-top: 2vh;
+  margin-bottom: 1vh;
+  min-height: 10vh;
+  resize: none;
+  text-align: center;
+  font-family: Tajawal;
+  border-radius: 25px
+}
+
+.textbox{
+  min-width: 80%;
+  text-align: center;
+  min-height: 3vh;
+  margin-top: 2vh;
+  margin-bottom: 1vh;
+  font-family: Tajawal;
+  border-radius: 25px;
+}
+
+
