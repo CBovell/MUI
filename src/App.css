@@ -169,7 +169,7 @@ section {
 .about{
   font-family: Tajawal;
   font-weight: 600;
-  color: rgb(0, 0, 0);
+  color: #e1e1e1;
   
   text-decoration: darkblue;
 }
@@ -178,7 +178,7 @@ section {
   margin-top: -2vh;
   font-family: Tajawal;
   font-weight: 400;
-  color: rgb(0, 0, 0);
+  color: #e1e1e1;
 }
 
 .roundedabout{
@@ -190,7 +190,7 @@ section {
   padding-right: 5%;
   min-width: 50%;
   min-height: 50vh;
-  background-color: #ffffff;
+  background-color: #111111;
   border-radius: 50px;
 }
 .card{
@@ -204,10 +204,12 @@ section {
   animation: fadeInAnimation ease 7s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+  
+  
 }
 
 .gallery{
-  background-color: #ffffff;
+  background-color: #111111;
   height: 96vh;
   overflow-y: auto;
   overflow-x: hidden; 
@@ -222,10 +224,13 @@ section {
 .inputForm{
   width: 50%;
   border-radius: 50px;
-  height: 55vh;
-  background-color: #ffffff;
+  height: 60vh;
+  background-color: #111111;
   padding: 5vh;
-  overflow:auto;
+  
+  overflow-x: hidden;
+  overflow-y: auto;
+  
 
 }
 
@@ -257,17 +262,77 @@ textarea{
   resize: none;
   text-align: center;
   font-family: Tajawal;
-  border-radius: 25px
+  border-radius: 25px;
+  border-color: rgb(131, 143, 167);
+  background-color: #111111;
 }
 
 .textbox{
   min-width: 80%;
+  max-width: 80%;
   text-align: center;
   min-height: 3vh;
   margin-top: 2vh;
   margin-bottom: 1vh;
   font-family: Tajawal;
   border-radius: 25px;
+  border-color: rgb(131, 143, 167);
+  border-style: solid;
+  overflow:hidden;
+  background-color: #111111;
+  color: #e1e1e1;
 }
 
+.orderbut{
+  margin-top: 2vh;
+  font-size: 1.1vh;
+  color: #e1e1e1;
+  font-family: inherit;
+  font-weight: 720;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 600ms;
+  transition-property: color;
+}
+
+
+.orderbut:hover {
+  color: #aa4095;
+  
+}
+
+
+.orderbut:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #aa4095;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 600ms;
+  transition-property: width, left;
+}
+
+.form{
+  overflow: auto;
+}
+
+h1{
+  color: #e1e1e1;
+}
+
+h3{
+  color: #e1e1e1;
+}
+
+h5{
+  color: #e1e1e1;
+}
 

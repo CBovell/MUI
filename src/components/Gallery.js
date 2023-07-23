@@ -61,33 +61,43 @@ function Gallery() {
     return (
     
     <div className='gallery'>
-      {console.log(cat1)}
-      {console.log(cat2)}
-      {console.log(cat3)}
-      {console.log(cat4)}
     <div className='gal'>
       <h1 className='galtxt'>{process.env.REACT_APP_CAT1}</h1>
         <ResponsiveGallery
         useLightBox
         images={cat1}
+        colsPadding={{xs: 4,s: 4,m: 7,l: 7,xl: 7,xxl:12}}
+        imagesPaddingBottom={{xs: 4,s: 4,m: 4,l: 16,xl: 16,xxl:16}}
         />
+        <br/>
+        <br/>
         <br/>
         <h1>{process.env.REACT_APP_CAT2}</h1>
         <ResponsiveGallery
         useLightBox
         images={cat2}
+        colsPadding={{xs: 4,s: 4,m: 7,l: 7,xl: 7,xxl:12}}
+        imagesPaddingBottom={{xs: 4,s: 4,m: 4,l: 16,xl: 16,xxl:16}}
         />
+        <br/>
+        <br/>
         <br/>
         <h1>{process.env.REACT_APP_CAT3}</h1>
         <ResponsiveGallery
         useLightBox
         images={cat3}
+        colsPadding={{xs: 4,s: 4,m: 7,l: 7,xl: 7,xxl:12}}
+        imagesPaddingBottom={{xs: 4,s: 4,m: 4,l: 16,xl: 16,xxl:16}}
         />
+        <br/>
+        <br/>
         <br/>
         <h1>{process.env.REACT_APP_CAT4}</h1>
         <ResponsiveGallery
         useLightBox
         images={cat4}
+        colsPadding={{xs: 4,s: 4,m: 7,l: 7,xl: 7,xxl:12}}
+        imagesPaddingBottom={{xs: 4,s: 4,m: 4,l: 16,xl: 16,xxl:16}}
         />
         <br/>
         <br/>
