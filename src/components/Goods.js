@@ -9,9 +9,9 @@ function Goods(){
             <div className="goods">
 
                 <div className="inputForm">
-                <form className="form">
+                <form className="form" action={`https://formsubmit.co/${REACT_APP_EMAIL}`} method="POST">
                     <h3>{process.env.REACT_APP_FORMTITLE}</h3>
-                    <input type='number' name='number' min ='1' placeholder={process.env.REACT_APP_FORM1} className="textbox" required />
+                    <input type='number' name='servings' min ='1' placeholder={process.env.REACT_APP_FORM1} className="textbox" required />
                     <br/>
                     <input type = 'text' name='contact' placeholder="Contact Information • Number or Email" className="textbox" required/>
                     <br/>
@@ -26,7 +26,7 @@ function Goods(){
 
                 <textarea placeholder="Tell Us About Any Requirements You May Have" name='Description'required/>
                 <br/>
-                <textarea placeholder="Please Link to Any Designs You Like " name='Description'required/>
+                <textarea placeholder="Please Link to Any Designs You Like " name='Inspiration'required/>
                 <br/>
                 <input type="submit" value="Submit" className="orderbut"></input>
                 </form>
