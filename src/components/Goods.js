@@ -9,7 +9,7 @@ function Goods(){
             <div className="goods">
 
                 <div className="inputForm">
-                <form className="form" action={`https://formsubmit.co/${REACT_APP_EMAIL}`} method="POST">
+                <form className="form" action={`https://formsubmit.co/${process.env.REACT_APP_EMAIL}`} method="POST">
                     <h3>{process.env.REACT_APP_FORMTITLE}</h3>
                     <input type='number' name='servings' min ='1' placeholder={process.env.REACT_APP_FORM1} className="textbox" required />
                     <br/>
